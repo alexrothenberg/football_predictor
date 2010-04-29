@@ -1,4 +1,4 @@
-<% form_for @user do |form| %>  
+<% form_for @user, :html => { :multipart => true } do |form| %>  
 <%= form.error_messages %>  
 <ol class="formList">  
   <li>  
@@ -20,5 +20,9 @@
   <li>  
     <%= form.submit "Submit" %>  
   </li>  
+  <li>
+    Your Avatar:
+    <%= form.file_field :avatar %>
+  </li>
 </ol>  
 <% end %>  

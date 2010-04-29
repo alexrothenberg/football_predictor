@@ -9,7 +9,8 @@ password = ENV['CLICKATELL_PASSWORD']
 require 'rubygems'
 require 'clickatell'
 api = Clickatell::API.authenticate(api_id, username, password) 
-api.send_message('250788465590', 'How easy is that to spam Jean Baptist')
+api.send_message('250788685005', 'How easy is that to spam you')
+
 
 # run this command: 
 #    ruby sending_sms.rb CLICKATELL_ID=x CLICKATELL_USERNAME=y CLICKATELL_PASSWORD=z

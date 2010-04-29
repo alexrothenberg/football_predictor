@@ -3,15 +3,15 @@ class GamesController < ApplicationController
   def index
   	@games = Game.all
   	respond_to do |format|
-  	  format.html
-  	  format.csv do
-  	    #see also send_file (http://railsbrain.com/api/rails-2.3.2/doc/index.html?a=M000195&name=send_file)
-  	    send_data Game.convert_games_to_csv(@games), :filename => 'games.csv'
-  	  end
-  	  format.xml do
-  	    render :xml => @games.to_xml
-	    end
-	  end
+      format.html
+      format.xml do
+        render :xml => @games.to_xml(:include => [:home_team, :away_team])
+      end
+      format.csv do
+        #see also send_file (http://railsbrain.com/api/rails-2.3.2/doc/index.html?a=M000195&name=send_file)
+        send_data Game.convert_games_to_csv(@games), :filename => 'games.csv'
+      end
+    end
   end
   
   def new
@@ -19,6 +19,7 @@ class GamesController < ApplicationController
   end
   
   def create
+    
   	Game.create(params[:game])
   	redirect_to games_url
   end

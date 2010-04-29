@@ -21,7 +21,7 @@ class Game < ActiveRecord::Base
 	#To see more about reading and writing csv files, see http://fastercsv.rubyforge.org/
 	def self.convert_games_to_csv(games)
     require 'fastercsv' #<= This require statement really belongs at the top of the config/environment.rb file
-	  csv = ['home team', 'away team', 'home scroe', 'away score'].to_csv
+	  csv = ['home team', 'away team', 'home score', 'away score'].to_csv
 	  games.each do |game|
 	    csv << [game.home_team.name, game.away_team.name, game.home_score, game.away_score].to_csv
     end

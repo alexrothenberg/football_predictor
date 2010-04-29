@@ -9,6 +9,7 @@
 
 	<div id="user_nav">  
 		<% if current_user %>  
+		  <%= image_tag(current_user.avatar.url) unless current_user.avatar.nil? %>
 			<%= link_to "Edit profile", edit_user_path(:current) %>  
 			<%= link_to "Logout", logout_path %>  
 		<% else %>  
