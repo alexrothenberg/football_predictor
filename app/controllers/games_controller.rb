@@ -36,7 +36,7 @@ class GamesController < ApplicationController
   def destroy
     @game = Game.find(params[:id])
     @game.destroy
-    render :js => "$('#{dom_id(@game)}').remove();"
+    render :js => "$('##{dom_id(@game)}').remove();"
   end
 
 end
