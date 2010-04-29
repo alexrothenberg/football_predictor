@@ -3,3 +3,6 @@ rake db:create:all
 rake db:migrate
 rake db:seed
 ruby script/server
+
+
+See Also: http://football-predictor.heroku.com/
