@@ -32,5 +32,11 @@ class GamesController < ApplicationController
   	@game.update_attributes(params[:game])
   	redirect_to games_url
   end
+  
+  def destroy
+    @game = Game.find(params[:id])
+    @game.destroy
+    render :js => "$('#{dom_id(@game)}').remove();"
+  end
 
 end

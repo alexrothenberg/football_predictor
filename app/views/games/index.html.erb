@@ -7,7 +7,7 @@
   	<th>Action</th>
   </tr>	
   <% @games.each do |game| %>
-  	<tr>
+  	<tr id="<%= dom_id(game) %>">
   		<td><%= link_to friendly_team_name(game.home_team),	
   		                team_path(game.home_team), 
   		                :class=>winner_when(game.home_team_won?) %> 
@@ -15,7 +15,13 @@
   		<td><%= game.home_score %></td>
   		<td><%= game.away_score %></td>
   		<td><%= link_to friendly_team_name(game.away_team), team_path(game.away_team), :class=>winner_when(game.away_team_won?) %></td>
-  		<td><%= link_to 'Edit', edit_game_path(game)%></td>
+  		<td>
+  		  <%= link_to 'Edit', edit_game_path(game) %> |
+  		  <%= link_to_remote 'Delete', 
+  		                     :url => game_path(game), 
+  		                     :method => :delete, 
+  		                     :confirm => 'Are you sure you want to delete?' %>
+  		</td>
   	</tr>
   <% end %>
 </table>

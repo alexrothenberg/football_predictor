@@ -1,18 +1,5 @@
-==== Getting Started
+==== Getting Started With This Project ==== 
 rake db:create:all
 rake db:migrate
 rake db:seed
 ruby script/server
-
-
-
-
-
-Topic: Deploy App
-Topic: Dynamic table reporting
-
-Topic: Reading and Writing files
-Topic: Regex
-Topic: JQuery
-Topic: SMS
-Topic: Web Service
