@@ -1,2 +1,14 @@
-.winner {font-weight: bold;}
-.draw   {font-style: italic;}
+th        {text-align: left;}
+
+.winner   {font-weight: bold;}
+.draw     {font-style: italic;}
+.clear    {clear:both;}
+
+#games td {width: 150px;}
+#games    {float:left;}
+
+#actions {
+  list-style-image: none;
+  list-style: none;
+  list-style-type: none;
+}

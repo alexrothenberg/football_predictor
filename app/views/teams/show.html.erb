@@ -6,13 +6,13 @@
 <% end %>
 
 
-<h2>Away Games</h2>
-<% @team.away_games.each do |game| %>
+<h2>Upcoming Away Games</h2>
+<% @team.away_games.upcoming.each do |game| %>
 	<%= link_to game.home_team.name, team_path(game.home_team) %> vs <%= game.away_team.name %><br/>
 <% end %>
 
-<h2>Home Games</h2>
-<% @team.home_games.each do |game| %>
+<h2>Upcoming Home Games</h2>
+<% @team.home_games.upcoming.each do |game| %>
 	<%= game.home_team.name %> vs <%= link_to game.away_team.name, team_path(game.away_team) %><br/>
 <% end %>
 
