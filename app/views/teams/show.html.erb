@@ -1,0 +1,18 @@
+<h1>Team <%= @team.name %></h1>
+
+<h2>Teams Competed Against</h2>
+<% @team.all_competitors.each do |team| %>
+	<%= link_to team.name, team_path(team) %><br/>
+<% end %>
+
+
+<h2>Away Games</h2>
+<% @team.away_games.each do |game| %>
+	<%= link_to game.home_team.name, team_path(game.home_team) %> vs <%= game.away_team.name %><br/>
+<% end %>
+
+<h2>Home Games</h2>
+<% @team.home_games.each do |game| %>
+	<%= game.home_team.name %> vs <%= link_to game.away_team.name, team_path(game.away_team) %><br/>
+<% end %>
+

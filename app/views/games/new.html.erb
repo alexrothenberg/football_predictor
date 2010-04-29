@@ -1,0 +1,26 @@
+<h1>Create a new Game</h1>
+
+<% form_for @game do |f| %>
+	<p>
+		<%= f.label 'Home Team'%>
+		<%= f.text_field :home_team %>
+	</p>
+
+	<p>
+		<%= f.label 'Home Score'%>
+		<%= f.text_field :home_score %>
+	</p>
+
+	<p>
+		<%= f.label 'Away Score'%>
+		<%= f.text_field :away_score %>
+	</p>
+
+	<p>
+		<%= f.label 'Away Team'%>
+		<%= f.text_field :away_team %>
+	</p>
+
+	<%= f.submit %>
+	
+<% end %>	
