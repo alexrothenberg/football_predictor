@@ -1,4 +1,6 @@
 class GamesController < ApplicationController
+  before_filter :convert_team_name_parameters_to_models, :only => [:create, :update]  
+
 
   def index
   	@games = Game.all
@@ -40,4 +42,9 @@ class GamesController < ApplicationController
     render :js => "$('##{dom_id(@game)}').remove();"
   end
 
+  private
+  def convert_team_name_parameters_to_models
+    params[:game][:home_team] = Team.find_or_create_by_name(params[:game][:home_team]) 
+    params[:game][:away_team] = Team.find_or_create_by_name(params[:game][:away_team]) 
+  end
 end

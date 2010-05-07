@@ -3,7 +3,7 @@
 <% form_for @game do |f| %>
 	<p>
 		<%= f.label 'Home Team'%>
-		<%= f.text_field :home_team %>
+		<%= f.text_field :home_team, :value=>@game.home_team.name %>
 	</p>
 
 	<p>
@@ -18,7 +18,7 @@
 
 	<p>
 		<%= f.label 'Away Team'%>
-		<%= f.text_field :away_team %>
+		<%= f.text_field :away_team, :value=>@game.away_team.name %>
 	</p>
 
 	<%= f.submit %>

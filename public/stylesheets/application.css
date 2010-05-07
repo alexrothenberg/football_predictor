@@ -12,3 +12,5 @@ th        {text-align: left;}
   list-style: none;
   list-style-type: none;
 }
+
+div#user_nav { float: right; font-size: 0.9em; }
