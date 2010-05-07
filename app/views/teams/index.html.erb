@@ -1,5 +1,5 @@
 <% @teams.each do |team| %>
-	<%= team.name %><br>
+	<%= link_to team.name, team_path(team) %><br>
 <% end %>
 
 <%= link_to 'Create New Team', new_team_path %>	
